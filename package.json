@@ -1,0 +1,34 @@
+{
+  "name": "vue-2-mcir",
+  "version": "1.0.0",
+  "description": "Project My client is rich",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm run serve --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "vuejs",
+    "nodejs"
+  ],
+  "author": "Daniel Kondratiuk <daniel.kondratiuk@myclientisrich.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.20",
+    "n": "^6.5.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  }
+}
