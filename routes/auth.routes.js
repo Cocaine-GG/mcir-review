@@ -1,4 +1,4 @@
-const {Router} = require('express')
+const {Router: Router} = require('express')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const config = require('config')
@@ -16,6 +16,7 @@ router.post(
   ],
   async (req,res)=>{
   try {
+    console.log('Body:',req.body)
     const  errors = validationResult(req)
 
     if(!errors.isEmpty()) {
