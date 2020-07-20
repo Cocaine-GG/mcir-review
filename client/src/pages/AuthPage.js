@@ -42,6 +42,7 @@ export const AuthPage = () => {
                   name="email"
                   className="form-control"
                   placeholder="Email address"
+                  value={form.email}
                   required
                   autoFocus
                   onChange={changeHandler}
@@ -56,6 +57,7 @@ export const AuthPage = () => {
                   name="password"
                   className="form-control"
                   placeholder="Password"
+                  value={form.password}
                   required
                   onChange={changeHandler}
                 />
