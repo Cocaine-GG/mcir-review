@@ -14,21 +14,21 @@ router.post('/generate', auth, async (req,res)=>{
     // const code = new Date().getTime()
     const code = shortid.generate()
 
-    const existing = await Link.findOne({})
+    const existing = await Link.findOne({code})
     if (existing) {
       return res.json({ link: existing })
     }
 
-    const linkUrl = baseUrl+'/review/'+code
+    const linkUrl = baseUrl+'/detail/'+code
 
     const link = new Link({
       client: linkForm.client, project: linkForm.project, code, linkUrl, owner: req.user.userId
     })
 
     await link.save()
-    return res.status(201).json({link})
+    res.status(201).json({link})
   }catch (e) {
-    return res.status(500).json({message:'Une erreur s\'est produite, réessayez plus tard'})
+    res.status(500).json({message:'Une erreur s\'est produite, réessayez plus tard'})
   }
 })
 

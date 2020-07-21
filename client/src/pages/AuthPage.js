@@ -30,7 +30,7 @@ export const AuthPage = () => {
   }
   return(
     <div className="row">
-      <div className="card col-12 col-md-6 mx-auto text-white bg-dark mt-5">
+      <div className="card col-12 col-md-8 col-lg-6 mx-auto text-white bg-dark mt-5">
         <div className="card-body">
           <div className="form-signin col-12">
             <img className="my-4 d-block mx-auto" src="https://www.myclientisrich.com/logo@2x.daf8e3aa.png" alt=""
@@ -49,7 +49,6 @@ export const AuthPage = () => {
                 />
                   <label htmlFor="email">Email address</label>
               </div>
-
               <div className="form-label-group">
                 <input
                   type="password"
@@ -69,13 +68,13 @@ export const AuthPage = () => {
                   <input type="checkbox" value="remember-me" /> Remember me
                 </label>
               </div>
-              <div className="d-flex">
+              <div className="d-block d-md-flex">
                 <button
                   onClick={loginHandler}
-                  className="btn btn-lg btn-primary w-50 mx-auto col-5"
+                  className="btn btn-lg btn-primary mb-2 mb-md-0 mx-auto col-12 col-md-5"
                 >Connexion</button>
                 <button
-                  className="btn btn-lg btn-light w-50 mx-auto col-5"
+                  className="btn btn-lg btn-light mx-auto col-12  col-md-5"
                   onClick={registerHandler}
                   disabled={loading}
                 >Inscription</button>

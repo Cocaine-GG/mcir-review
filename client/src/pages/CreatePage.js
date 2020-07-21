@@ -20,7 +20,7 @@ export const CreatePage = () => {
         const data = await request('/api/link/generate', 'POST', {linkForm}, {
           Authorization : `Bearer ${auth.token}`
         })
-        history.push(`/detail/${data.link._id}`)
+        history.push(`/detail/${data.link.code}`)
       }catch (e) {
 
       }
@@ -44,7 +44,7 @@ export const CreatePage = () => {
         <input
           id="project"
           name="project"
-          className="form-control"
+          className="form-control ml-2"
           placeholder="Entrez le nom du projet"
           value={linkForm.project}
           onChange={changeHandler}

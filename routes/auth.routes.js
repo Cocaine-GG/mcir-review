@@ -15,35 +15,35 @@ router.post(
     .isLength({ min:6 })
   ],
   async (req,res)=>{
-  try {
-    const  errors = validationResult(req)
+    try {
+      const  errors = validationResult(req)
 
-    if(!errors.isEmpty()) {
-      return  res.status(400).json({
-        errors: errors.array(),
-        message: 'Données d\'enregistrement incorrectes'
-      })
+      if(!errors.isEmpty()) {
+        return  res.status(400).json({
+          errors: errors.array(),
+          message: 'Données d\'enregistrement incorrectes'
+        })
+      }
+
+      const {email, password} = req.body
+
+      const candidate = await User.findOne({ email })
+
+      if(candidate) {
+        res.status(400).json({message:'Cet utilisateur existe déjà'})
+      }
+
+      const hashedPassword = await bcrypt.hash(password, 12)
+      const user = new User({ email, password: hashedPassword })
+
+      await user.save()
+
+      res.status(201).json({ message: 'L\'utilisateur a été créé avec succès'})
+
+    }catch (e) {
+      res.status(500).json({message:'Une erreur s\'est produite, réessayez plus tard'})
     }
-
-    const {email, password} = req.body
-
-    const candidate = await User.findOne({ email })
-
-    if(candidate) {
-      res.status(400).json({message:'Cet utilisateur existe déjà'})
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 12)
-    const user = new User({ email, password: hashedPassword })
-
-    await user.save()
-
-    res.status(201).json({ message: 'L\'utilisateur a été créé avec succès'})
-
-  }catch (e) {
-    res.status(500).json({message:'Une erreur s\'est produite, réessayez plus tard'})
-  }
-})
+  })
 
 // /api/login
 router.post('/login',
@@ -87,6 +87,6 @@ router.post('/login',
     }catch (e) {
       res.status(500).json({message:'Une erreur s\'est produite, réessayez plus tard'})
     }
-})
+  })
 
 module.exports = router
