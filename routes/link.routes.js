@@ -20,9 +20,10 @@ router.post('/generate', auth, async (req,res)=>{
     }
 
     const linkUrl = baseUrl+'/detail/'+code
+    const linkForClient = baseUrl+'/review/'+code
 
     const link = new Link({
-      client: linkForm.client, project: linkForm.project, code, linkUrl, owner: req.user.userId
+      client: linkForm.client, project: linkForm.project, code, linkUrl, linkForClient, owner: req.user.userId
     })
 
     await link.save()
@@ -43,7 +44,7 @@ router.get('/', auth, async (req,res)=>{
 
 router.get('/:id', auth, async (req,res)=>{
   try {
-    const link = await Link.findById(req.params.id) //????
+    const link = await Link.findOne({code:req.params.id})
     res.json(link)
   }catch (e) {
     res.status(500).json({message:'Une erreur s\'est produite, réessayez plus tard'})
