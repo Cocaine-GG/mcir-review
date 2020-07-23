@@ -1,0 +1,62 @@
+.welcome {
+
+  //background-image: url('../../assets/images/Rambo-PNG-Photo.png');
+  //background-repeat: no-repeat;
+  //background-position: right 0px bottom -10px;
+  span {
+    color: #CE4A4A;
+  }
+  &__title,
+  &__subtitle {
+    text-transform: uppercase;
+    color: #000;
+  }
+  &__title {
+    font-size: 9.375rem;
+  }
+  &__subtitle {
+    font-size: 4.75rem;
+  }
+  &__btn {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 2.2em;
+    background: #CE4A4A;
+    color: #fff;
+    line-height: 38px;
+    border: 0;
+    &:focus{
+      outline: none;
+    }
+  }
+  .button__line {
+    height: 5px;
+    opacity: 0.4;
+    margin: 0px 8px;
+    background: #CE4A4A;
+    transition: .3s all ease;
+  }
+}
+//Responsive
+@media (max-width: 767.98px) {
+  .welcome {
+    &__title,
+    &__subtitle {
+      font-size: 2.5rem;
+      text-align: center;
+      line-height: 40px;
+      margin-bottom: 0;
+    }
+  }
+
+}
+@media (min-width: 767.98px ) and (max-width: 1023.98px) {
+  .welcome {
+    &__title {
+      font-size: 4.5rem;
+    }
+    &__subtitle {
+      font-size: 3.5rem;
+    }
+  }
+}
