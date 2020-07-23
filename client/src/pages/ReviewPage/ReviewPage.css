@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Gotham";
+  src: local("Gotham"), url("../../assets/fonts/gotham.otf") format("opentype");
+}
+body {
+  font-family: "Gotham";
+  min-height: 100vh;
+  background: transparent linear-gradient(242deg, #FAFAFA 0%, #E8E8E8 100%) 0% 0% no-repeat padding-box;
+}
+
+.carousel {
+  font-family: "Gotham";
+}
+
+/*# sourceMappingURL=ReviewPage.css.map */

@@ -1,0 +1,51 @@
+.welcome span {
+  color: #CE4A4A;
+}
+.welcome__title, .welcome__subtitle {
+  text-transform: uppercase;
+  color: #000;
+}
+.welcome__title {
+  font-size: 9.375rem;
+}
+.welcome__subtitle {
+  font-size: 4.75rem;
+}
+.welcome__btn {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 2.2em;
+  background: #CE4A4A;
+  color: #fff;
+  line-height: 38px;
+  border: 0;
+}
+.welcome__btn:focus {
+  outline: none;
+}
+.welcome .button__line {
+  height: 5px;
+  opacity: 0.4;
+  margin: 0px 8px;
+  background: #CE4A4A;
+  transition: 0.3s all ease;
+}
+
+@media (max-width: 767.98px) {
+  .welcome__title, .welcome__subtitle {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 767.98px) and (max-width: 1023.98px) {
+  .welcome__title {
+    font-size: 4.5rem;
+  }
+  .welcome__subtitle {
+    font-size: 3.5rem;
+  }
+}
+
+/*# sourceMappingURL=welcome.css.map */

@@ -1,5 +1,6 @@
 {
   "port": 5000,
   "jwtSecret": "mcir-secret-key",
-  "mongoUri": "mongodb+srv://mcir-db:myclientisrich67@cluster0.fnvop.mongodb.net/mcir-db?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://mcir-db:myclientisrich67@cluster0.fnvop.mongodb.net/mcir-db?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:5000"
 }
