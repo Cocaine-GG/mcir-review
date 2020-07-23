@@ -1,9 +1,9 @@
 import React, {useContext, useState} from 'react'
-import {useHttp} from '../hooks/http.hook'
-import {AuthContext} from '../context/AuthContext'
-import './AuthPage.css'
+import {useHttp} from '../../hooks/http.hook'
+import {AuthContext} from '../../context/AuthContext'
+import './authPage.css'
 
-export const AuthPage = () => {
+const AuthPage = () => {
   const auth = useContext(AuthContext)
   const {loading,request}= useHttp()
   const [form, setForm] = useState({
@@ -33,7 +33,7 @@ export const AuthPage = () => {
       <div className="card col-12 col-md-8 col-lg-6 mx-auto text-white bg-dark mt-5">
         <div className="card-body">
           <div className="form-signin col-12">
-            <img className="my-4 d-block mx-auto" src="https://www.myclientisrich.com/logo@2x.daf8e3aa.png" alt=""
+            <img className="my-4 d-block mx-auto" src="https://www.myclientisrich.com/logo@2x.daf8e3aa.png" alt="Logo MCIR"
                  width="100" height="100" />
               <div className="form-label-group">
                 <input
@@ -85,3 +85,5 @@ export const AuthPage = () => {
   </div>
   )
 }
+
+export default AuthPage

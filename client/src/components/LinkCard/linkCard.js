@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
-export const LinkCard = ({link}) => {
+ const LinkCard = ({link}) => {
   return (
     <>
       <h2>Lien</h2>
@@ -10,3 +10,4 @@ export const LinkCard = ({link}) => {
     </>
   )
 }
+export default LinkCard

@@ -1,9 +1,9 @@
 import React, {useContext, useState} from 'react'
-import {useHttp} from '../hooks/http.hook'
-import {AuthContext} from '../context/AuthContext'
+import {useHttp} from '../../hooks/http.hook'
+import {AuthContext} from '../../context/AuthContext'
 import {useHistory} from 'react-router-dom'
 
-export const CreatePage = () => {
+const CreatePage = () => {
   const history = useHistory()
   const auth = useContext(AuthContext)
   const {request} = useHttp()
@@ -58,3 +58,5 @@ export const CreatePage = () => {
     </div>
   )
 }
+
+export default CreatePage

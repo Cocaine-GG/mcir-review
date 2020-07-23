@@ -51,4 +51,13 @@ router.get('/:id', auth, async (req,res)=>{
   }
 })
 
+router.get('/review/:id', async (req,res)=>{
+  try {
+    const link = await Link.findOne({code:req.params.id})
+    res.json(link)
+  }catch (e) {
+    res.status(500).json({message:'Une erreur s\'est produite, réessayez plus tard'})
+  }
+})
+
 module.exports = router
