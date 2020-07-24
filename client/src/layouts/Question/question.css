@@ -1,3 +1,11 @@
-
+.question__number-page {
+  color: #fff;
+  font-size: 13.375rem;
+  line-height: 214px;
+}
+.question__title {
+  font-size: 4rem;
+  color: #000;
+}
 
 /*# sourceMappingURL=question.css.map */

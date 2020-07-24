@@ -14,21 +14,20 @@ const ReviewPage = () => {
   const [link, setLink]= useState(null)
   const linkId = useParams().id
 
-  const QuestionData = [
+  const questionData = [
     {
-      title: 'Comment s’est déroulée notre collaboration selon vous ?'
+      title: 'Comment s’est déroulée notre collaboration selon vous ?',
     },
     {
-      title: 'Quelle est votre satisfaction par rapport à la prestation livrée ?'
+      title: 'Quelle est votre satisfaction par rapport à la prestation livrée ?',
     },
     {
-      title: 'Avez-vous eu des retours de vos clients par rapport à cette mission ?'
+      title: 'Avez-vous eu des retours de vos clients par rapport à cette mission ?',
     },
     {
-      title: 'Des conseils ou remarques à nous transmettre ?'
+      title: 'Des conseils ou remarques à nous transmettre ?',
     }
   ]
-
 
   //TODO: Optimize callback
   const getLink = useCallback(async ()=>{
@@ -61,10 +60,14 @@ const ReviewPage = () => {
           <Logo />
           {!loading && link && <Welcome link={link}/>}
         </div>
-        {QuestionData.map((q,i)=>{
+        {questionData.map((title,index)=>{
           return (
-            <div key={i} className="carousel-item">
-              {!loading && link && <Question title={q} index={i}/>}
+            <div key={index} className="carousel-item">
+              {!loading && link &&
+              <Question
+                questionData={title}
+                index={index}
+              />}
             </div>
           )
         })}
