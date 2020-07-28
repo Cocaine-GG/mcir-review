@@ -1,8 +1,4 @@
 .welcome {
-
-  //background-image: url('../../assets/images/Rambo-PNG-Photo.png');
-  //background-repeat: no-repeat;
-  //background-position: right 0px bottom -10px;
   span {
     color: #CE4A4A;
   }
@@ -39,6 +35,7 @@
 //Responsive
 @media (max-width: 767.98px) {
   .welcome {
+    margin-top: 100px;
     &__title,
     &__subtitle {
       font-size: 2.5rem;

@@ -19,3 +19,17 @@ input[type="radio"] {
   text-align: center;
   font-size: 4rem;
 }
+
+@media (max-width: 767.98px) {
+  .stars-rating {
+    margin: auto;
+  }
+  .star,
+  .star--active {
+    font-size: 2rem;
+  }
+  .question__stars-text {
+    text-align: center;
+    font-size: 2rem;
+  }
+}

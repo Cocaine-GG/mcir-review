@@ -9,6 +9,7 @@ const DetailPage = () => {
   const {token} = useContext(AuthContext)
   const {request, loading} = useHttp()
   const [link, setLink]= useState(null)
+  const [answer, setAnswer]= useState(null)
   const linkId = useParams().id
 
   const getLink = useCallback(async ()=>{
@@ -20,9 +21,20 @@ const DetailPage = () => {
     } catch (e) {}
   }, [token, linkId, request])
 
+  const getAnswer = useCallback(async ()=>{
+    try {
+      const fetched = await request(`/api/review/${linkId}`, 'GET', null, {linkId})
+      setAnswer(fetched)
+    } catch (e) {}
+  }, [linkId, request])
+
   useEffect(()=> {
     getLink()
   },[getLink])
+
+  useEffect(()=> {
+    getAnswer()
+  },[getAnswer])
 
   if(loading) {
     return <Loader/>
@@ -30,7 +42,7 @@ const DetailPage = () => {
 
   return(
     <div>
-      {!loading && link && <LinkCard link={link}/>}
+      {!loading && link && <LinkCard link={link} answer={answer}/>}
     </div>
   )
 }

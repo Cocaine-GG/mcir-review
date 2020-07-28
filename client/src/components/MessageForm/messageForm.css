@@ -1,18 +1,16 @@
-textarea {
-  height: 200px;
+.message-form textarea {
+  height: 230px;
   padding-left: 20px;
   padding-top: 20px;
   outline: none;
   color: #777777;
-  font-weight: 300;
   font-size: 18px;
   border-radius: 10px;
 }
-
-.btn-textarea {
+.message-form .btn-textarea {
   position: absolute;
-  right: 0;
-  bottom: -20px;
+  right: -20px;
+  bottom: -30px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -22,6 +20,35 @@ textarea {
   text-transform: uppercase;
   font-size: 3rem;
   color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .message-form {
+    margin-top: 50px;
+  }
+  .message-form textarea {
+    height: 150px;
+    padding-left: 20px;
+    padding-top: 20px;
+    outline: none;
+    color: #777777;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .message-form .btn-textarea {
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background: #CE4A4A;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #fff;
+  }
 }
 
 /*# sourceMappingURL=messageForm.css.map */

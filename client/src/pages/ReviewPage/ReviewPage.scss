@@ -10,4 +10,44 @@ body {
 .carousel {
   font-family: 'Gotham';
   text-transform: uppercase;
+  height: 100vh;
 }
+.question {
+  margin-top: 6rem;
+  &__number-page {
+    color: #fff;
+    font-size: 13.375rem;
+  }
+  &__title {
+    font-size: 4rem;
+    color: #000;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .question {
+    margin: 1.5rem;
+    &__number-page {
+      color: #fff;
+      font-size: 9rem;
+      text-align: center;
+    }
+    &__title {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #000;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+//@media (min-width: 767.98px ) and (max-width: 1023.98px) {
+//  .welcome {
+//    &__title {
+//      font-size: 4.5rem;
+//    }
+//    &__subtitle {
+//      font-size: 3.5rem;
+//    }
+//  }
+//}

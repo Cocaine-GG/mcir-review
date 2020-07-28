@@ -5,40 +5,31 @@ import {useHttp} from '../../hooks/http.hook'
 import {useParams} from 'react-router-dom'
 import Loader from '../../components/Loader'
 import {AuthContext} from '../../context/AuthContext'
-import Question from '../../layouts/Question'
+import StarsRating from '../../components/StarsRating'
+import MessageForm from '../../components/MessageForm'
 import './ReviewPage.scss'
 
 const ReviewPage = () => {
   const {token} = useContext(AuthContext)
   const {request, loading} = useHttp()
   const [link, setLink]= useState(null)
-  const linkId = useParams().id
-
-  const questionData = [
-    {
-      title: 'Comment s’est déroulée notre collaboration selon vous ?',
-    },
-    {
-      title: 'Quelle est votre satisfaction par rapport à la prestation livrée ?',
-    },
-    {
-      title: 'Avez-vous eu des retours de vos clients par rapport à cette mission ?',
-    },
-    {
-      title: 'Des conseils ou remarques à nous transmettre ?',
-    }
+  const linkCode = useParams().id
+  const questionTitle = [
+    'Comment s’est déroulée notre collaboration selon vous ?',
+    'Quelle est votre satisfaction par rapport à la prestation livrée ?',
+    'Avez-vous eu des retours de vos clients par rapport à cette mission ?', 'Des conseils ou remarques à nous transmettre ?'
   ]
-
+  const answer = [linkCode]
   //TODO: Optimize callback
   const getLink = useCallback(async ()=>{
     try {
-      const fetched = await request(`/api/link/review/${linkId}`, 'GET', null, {
+      const fetched = await request(`/api/link/review/${linkCode}`, 'GET', null, {
         Authorization: `Bearer `
       })
       setLink(fetched)
 
     } catch (e) {}
-  }, [linkId, request])
+  }, [linkCode, request])
   useEffect(()=> {
     getLink()
   },[getLink])
@@ -50,28 +41,53 @@ const ReviewPage = () => {
     return <Loader/>
   }
   return (
-    <div id="carouselExampleControls" className="carousel slide"
+    <div id="carouselExampleControls" className="review-page carousel slide d-flex"
          data-ride="carousel"
          data-interval="0"
          data-touch="false"
          data-wrap="false"
     >
-      <div className="carousel-inner">
+      <div className="carousel-inner h-100 d-flex">
         <div className="carousel-item active">
           <Logo />
           {!loading && link && <Welcome link={link}/>}
         </div>
-        {questionData.map((title,index)=>{
-          return (
-            <div key={title.title} className="carousel-item">
-              {!loading && link &&
-              <Question
-                questionData={title}
-                index={index}
-                link={link}
-              />}
-            </div>
-          )
+        {questionTitle.map((el, index)=>{
+          if(index<2){
+            return(
+              <div className="carousel-item" key={el}>
+                <div className="container question">
+                  <div className="question__number-page">
+                    0{index+1}
+                  </div>
+
+                  <div className="d-md-flex justify-content-between">
+                    <h1 className="question__title  py-0 col-md-6">{el}</h1>
+                    <div className="starsWrap align-self-lg-center col-12 col-md-5">
+                      <StarsRating answArr={answer}/>
+                    </div>
+                  </div>
+                </div>
+              </div>)
+          }if(index>1){
+            return(
+              <div className="carousel-item" key={el}>
+                <div className="container question">
+                  <div className="question__number-page">
+                    0{index+1}
+                  </div>
+
+                  <div className="d-md-flex justify-content-between">
+                    <h1 className="question__title col-md-6">{el}</h1>
+                    <div className="starsWrap align-self-center align-self-lg-center col-12 col-md-5">
+                      <MessageForm answArr={answer}/>
+                    </div>
+                  </div>
+                </div>
+              </div>)
+          } else {
+            return ''
+          }
         })}
       </div>
     </div>
