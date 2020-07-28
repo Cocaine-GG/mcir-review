@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react'
-import './ReviewPage.scss'
 import Logo from '../../components/Logo'
 import Welcome from '../../layouts/Welcome'
 import {useHttp} from '../../hooks/http.hook'
@@ -7,6 +6,7 @@ import {useParams} from 'react-router-dom'
 import Loader from '../../components/Loader'
 import {AuthContext} from '../../context/AuthContext'
 import Question from '../../layouts/Question'
+import './ReviewPage.scss'
 
 const ReviewPage = () => {
   const {token} = useContext(AuthContext)
@@ -54,6 +54,7 @@ const ReviewPage = () => {
          data-ride="carousel"
          data-interval="0"
          data-touch="false"
+         data-wrap="false"
     >
       <div className="carousel-inner">
         <div className="carousel-item active">
@@ -62,11 +63,12 @@ const ReviewPage = () => {
         </div>
         {questionData.map((title,index)=>{
           return (
-            <div key={index} className="carousel-item">
+            <div key={title.title} className="carousel-item">
               {!loading && link &&
               <Question
                 questionData={title}
                 index={index}
+                link={link}
               />}
             </div>
           )

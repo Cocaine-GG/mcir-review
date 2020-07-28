@@ -5,7 +5,7 @@ const schema = new Schema({
   question_2: String,
   question_3: String,
   question_4: String,
-  Link: [{ type: Types.ObjectId, ref: 'Link' }]
+  link: {type: Types.ObjectId, ref: 'Link'}
 })
 
 module.exports = model('Answer', schema)

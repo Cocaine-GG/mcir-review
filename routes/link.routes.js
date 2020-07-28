@@ -11,7 +11,6 @@ router.post('/generate', auth, async (req,res)=>{
   try {
     const baseUrl = config.get('baseUrl')
     const {linkForm} = req.body
-    // const code = new Date().getTime()
     const code = shortid.generate()
 
     const existing = await Link.findOne({code})

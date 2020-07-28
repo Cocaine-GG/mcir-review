@@ -1,15 +1,10 @@
 import React from 'react'
-import './question.scss'
 import StarsRating from '../../components/StarsRating'
-const Question = (props) => {
-  const {questionData, index} = props
+import MessageForm from '../../components/MessageForm'
+import './question.scss'
 
-  //TODO: answerHandler
-  const arrAnswer = []
-  const answerHandler=(param)=>{
-    arrAnswer.push(param)
-    console.log(arrAnswer)
-  }
+const Question = (props) => {
+  const {questionData, index, link} = props
 
   return (
     <div className="container question">
@@ -19,15 +14,12 @@ const Question = (props) => {
       <div className="d-flex justify-content-between">
         <h1 className="question__title col-md-6">{questionData.title}</h1>
         <div className="starsWrap align-self-center align-self-lg-center col-5">
-          {index===0 &&
-          <StarsRating ansHandler={answerHandler} />}
-          {index===1 &&
-          <StarsRating ansHandler={answerHandler}/>}
+          {index===0 && <StarsRating code={link.code} />}
+          {index===1 && <StarsRating code={link.code}/>}
+          {index===2 && <MessageForm />}
+          {index===3 && <MessageForm />}
         </div>
-        </div>
-      <button className="questionbutton d-block" href="#carouselExampleControls" data-slide="next">Dites-nous
-        tout !
-      </button>
+      </div>
     </div>)
 }
 
