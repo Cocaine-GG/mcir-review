@@ -10,6 +10,48 @@ body {
 
 .carousel {
   font-family: "Gotham";
+  text-transform: uppercase;
+  height: 100vh;
+}
+
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+  transition-delay: 0.4s !important;
+}
+
+.question {
+  margin-top: 6rem;
+}
+.question__number-page {
+  color: #fff;
+  font-size: 13.375rem;
+}
+.question__title {
+  font-size: 4rem;
+  color: #000;
+}
+
+@media (max-width: 767.98px) {
+  .question {
+    margin: 1.5rem;
+  }
+  .question__number-page {
+    color: #fff;
+    font-size: 9rem;
+    text-align: center;
+  }
+  .question__title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #000;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (max-width: 767.98px) and (max-height: 620px) {
+  .carousel {
+    height: 115vh;
+  }
 }
 
 /*# sourceMappingURL=ReviewPage.css.map */

@@ -16,8 +16,7 @@ const AuthPage = () => {
 
   const registerHandler = async () => {
     try {
-      const data = await request('api/auth/register', 'POST', {...form})
-      console.log('Data', data)
+      await request('api/auth/register', 'POST', {...form})
     } catch (e) {
     }
   }

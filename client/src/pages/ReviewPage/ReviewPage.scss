@@ -2,11 +2,56 @@
   font-family: 'Gotham';
   src: local('Gotham'), url('../../assets/fonts/gotham.otf') format('opentype');
 }
+
 body {
   font-family: 'Gotham';
   min-height: 100vh;
   background: transparent linear-gradient(242deg, #FAFAFA 0%, #E8E8E8 100%) 0% 0% no-repeat padding-box;
 }
+
 .carousel {
   font-family: 'Gotham';
+  text-transform: uppercase;
+  height: 100vh;
+}
+
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+  transition-delay: .4s!important;
+}
+
+.question {
+  margin-top: 6rem;
+  &__number-page {
+    color: #fff;
+    font-size: 13.375rem;
+  }
+  &__title {
+    font-size: 4rem;
+    color: #000;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .question {
+    margin: 1.5rem;
+    &__number-page {
+      color: #fff;
+      font-size: 9rem;
+      text-align: center;
+    }
+    &__title {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #000;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) and (max-height: 620px){
+  .carousel {
+    height: 115vh;
+  }
 }

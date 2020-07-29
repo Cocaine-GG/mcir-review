@@ -1,0 +1,35 @@
+.star,
+.star--active{
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color .5s;
+  margin: 0 5px;
+
+}
+.star {
+  color: #E2E2E2;
+}
+.star--active {
+  color: #C79E42;
+}
+input[type="radio"] {
+  display: none;
+}
+.question__stars-text {
+  text-align: center;
+  font-size: 4rem;
+}
+
+@media (max-width: 767.98px) {
+  .stars-rating {
+    margin: auto;
+  }
+  .star,
+  .star--active {
+    font-size: 2rem;
+  }
+  .question__stars-text {
+    text-align: center;
+    font-size: 2rem;
+  }
+}

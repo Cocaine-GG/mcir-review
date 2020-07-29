@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'GothamLight';
+  src: local('GothamLight'), url('../../assets/fonts/GothamRegular.otf') format('opentype');
+}
+.recommendation {
+  &__context {
+    text-align: center;
+  }
+  .context {
+    &__title {
+      font-size: 4.75rem;
+    }
+    &__subtitle {
+      font-family: 'GothamLight';
+      font-size: 2.2rem;
+    }
+  }
+  &__footer {
+    font-family: 'GothamLight';
+    font-size: 2.2rem;
+    height: 40vh;
+    background: #DDD;
+  }
+  .footer {
+    &__img {
+      position: fixed;
+      bottom: -230px;
+      left: 0;
+    }
+    &__btn {
+      font-family: 'gotham';
+      text-transform: none;
+      font-size: 2.5rem;
+      background: #fff;
+      padding: 10px 50px;
+      border-radius: 0;
+      -webkit-box-shadow: -2px 11px 25px -9px rgba(0,0,0,0.75);
+      -moz-box-shadow: -2px 11px 25px -9px rgba(0,0,0,0.75);
+      box-shadow: -2px 11px 25px -9px rgba(0,0,0,0.75);
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .recommendation {
+    .context {
+      &__title {
+        font-size: 2rem;
+      }
+      &__subtitle {
+        font-size: 1rem;
+      }
+    }
+    .footer {
+      &__title {
+        font-size: 1rem;
+      }
+      &__img {
+        position: fixed;
+        bottom: -350px;
+      }
+      &__btn {
+        font-family: 'gotham';
+        font-size: 1.5rem;
+        background: #fff;
+        padding: 10px 50px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .recommendation {
+    .context {
+      &__title {
+        font-size: 3.25rem;
+      }
+
+      &__subtitle {
+        font-size: 2rem;
+      }
+    }
+  }
+}
