@@ -9,7 +9,7 @@ const Welcome = ({link}) => {
           <h2 className="welcome__subtitle">La mission <span>{link.project}</span> est livrée. <br/> On debriefe ?</h2>
         </div>
         <div className="col-12 col-md-5 px-0">
-          <button className="welcome__btn button d-block" href="#carouselExampleControls" data-slide="next">Dites-nous
+          <button className="welcome__btn button d-block" href="#carousel" data-slide="next">Dites-nous
             tout !
           </button>
           <div className="button__line d-block"></div>

@@ -1,12 +1,13 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react'
-import Logo from '../../components/Logo'
-import Welcome from '../../layouts/Welcome'
-import {useHttp} from '../../hooks/http.hook'
 import {useParams} from 'react-router-dom'
-import Loader from '../../components/Loader'
+import {useHttp} from '../../hooks/http.hook'
 import {AuthContext} from '../../context/AuthContext'
+import Logo from '../../components/Logo'
 import StarsRating from '../../components/StarsRating'
 import MessageForm from '../../components/MessageForm'
+import Loader from '../../components/Loader'
+import Welcome from '../../layouts/Welcome'
+import Recommendation from '../../layouts/Recommendation'
 import './ReviewPage.scss'
 
 const ReviewPage = () => {
@@ -41,7 +42,7 @@ const ReviewPage = () => {
     return <Loader/>
   }
   return (
-    <div id="carouselExampleControls" className="review-page carousel slide d-flex"
+    <div id="carousel" className="review-page carousel slide d-flex"
          data-ride="carousel"
          data-interval="0"
          data-touch="false"
@@ -89,6 +90,10 @@ const ReviewPage = () => {
             return ''
           }
         })}
+        <div className="carousel-item">
+          <Logo />
+          {!loading && link && <Recommendation/>}
+        </div>
       </div>
     </div>
   )

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "GothamLight";
+  src: local("GothamLight"), url("../../assets/fonts/GothamRegular.otf") format("opentype");
+}
+.recommendation__context {
+  text-align: center;
+}
+.recommendation .context__title {
+  font-size: 4.75rem;
+}
+.recommendation .context__subtitle {
+  font-family: "GothamLight";
+  font-size: 2.2rem;
+}
+.recommendation__footer {
+  font-family: "GothamLight";
+  font-size: 2.2rem;
+  height: 40vh;
+  background: #DDD;
+}
+.recommendation .footer__img {
+  position: fixed;
+  bottom: -230px;
+  left: 0;
+}
+.recommendation .footer__btn {
+  font-family: "gotham";
+  text-transform: none;
+  font-size: 2.5rem;
+  background: #fff;
+  padding: 10px 50px;
+  border-radius: 0;
+  -webkit-box-shadow: -2px 11px 25px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 11px 25px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 11px 25px -9px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 767.98px) {
+  .recommendation .context__title {
+    font-size: 2rem;
+  }
+  .recommendation .context__subtitle {
+    font-size: 1rem;
+  }
+  .recommendation .footer__title {
+    font-size: 1rem;
+  }
+  .recommendation .footer__img {
+    position: fixed;
+    bottom: -350px;
+  }
+  .recommendation .footer__btn {
+    font-family: "gotham";
+    font-size: 1.5rem;
+    background: #fff;
+    padding: 10px 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .recommendation .context__title {
+    font-size: 3.25rem;
+  }
+  .recommendation .context__subtitle {
+    font-size: 2rem;
+  }
+}
+
+/*# sourceMappingURL=recommandation.css.map */

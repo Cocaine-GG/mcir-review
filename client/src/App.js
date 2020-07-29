@@ -21,7 +21,7 @@ export default function App() {
     <AuthContext.Provider value={{login,logout, token, userId,isAuthenticated}}>
       <Router>
         { isAuthenticated && <Navbar/>}
-        <div className="container-fluid">
+        <div className="container-fluid px-0">
           {route}
         </div>
       </Router>

@@ -1,27 +1,29 @@
 import React, {useState} from 'react'
-import './messageForm.scss'
 import {useHttp} from '../../hooks/http.hook'
+import './messageForm.scss'
 
 
 const MessageForm = ({ answArr }) => {
   const [message, setMessage] = useState({message:''})
+  const [btnDisabled, setBtnDisabled] = useState(true)
   const {request}= useHttp()
 
 
   const messageHandler =(event)=>{
     setMessage(event.target.value)
+    if(message){
+      setBtnDisabled(false)
+    }
   }
   const messageRecoder =()=>{
     answArr.push(message)
 
     //SUBMIT DATAS
     if (answArr.length === 5) {
-      console.log(answArr)
       const submitHandler = async ()=>{
-        console.log(answArr)
         try {
           const data = await request('/api/review/answer', 'POST', {...answArr})
-          console.log(data)
+          console.log(data) // For what????
         } catch (e) {
         }
       }
@@ -32,6 +34,7 @@ const MessageForm = ({ answArr }) => {
   return (
     <div className="message-form">
       <textarea
+        required
         placeholder="Écrire ici ..."
         className="border-0 w-100"
         value={message.message}
@@ -40,8 +43,9 @@ const MessageForm = ({ answArr }) => {
 
       </textarea>
       <button
+        disabled={btnDisabled}
         className="btn-textarea"
-        href="#carouselExampleControls"
+        href="#carousel"
         onClick={messageRecoder}
         data-slide="next"
       >ok</button>
