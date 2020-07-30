@@ -28,8 +28,8 @@ import Loader from '../Loader'
         {answer.map(el=>{
           return (
             <tr key={el.code}>
-              <td>{el.question_1}</td>
-              <td>{el.question_2}</td>
+              <td>{el.question_1}/5 Etoiles</td>
+              <td>{el.question_2}/5 Etoiles</td>
               <td>{el.question_3}</td>
               <td>{el.question_4}</td>
             </tr>

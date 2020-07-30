@@ -1,12 +1,21 @@
+@font-face {
+  font-family: 'GothamLight';
+  src: local('GothamLight'), url('../../assets/fonts/GothamLight.otf') format('opentype');
+}
 .message-form {
   textarea {
+    font-family: 'GothamLight';
     height: 230px;
     padding-left: 20px;
     padding-top: 20px;
     outline: none;
     color: #777777;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 10px;
+    &::placeholder {
+      font-family: 'GothamLight';
+      font-size: 12px;
+    }
   }
   .btn-textarea {
     position: absolute;
@@ -32,7 +41,6 @@
       padding-top: 20px;
       outline: none;
       color: #777777;
-      font-size: 18px;
       border-radius: 10px;
     }
     .btn-textarea {

@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'GothamLight';
-  src: local('GothamLight'), url('../../assets/fonts/GothamRegular.otf') format('opentype');
+  font-family: 'GothamRegular';
+  src: local('GothamRegular'), url('../../assets/fonts/GothamRegular.otf') format('opentype');
 }
 .recommendation {
   &__context {
@@ -11,12 +11,12 @@
       font-size: 4.75rem;
     }
     &__subtitle {
-      font-family: 'GothamLight';
+      font-family: 'GothamRegular';
       font-size: 2.2rem;
     }
   }
   &__footer {
-    font-family: 'GothamLight';
+    font-family: 'GothamRegular';
     font-size: 2.2rem;
     height: 40vh;
     background: #DDD;

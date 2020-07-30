@@ -6,9 +6,11 @@ import Logo from '../../components/Logo'
 import StarsRating from '../../components/StarsRating'
 import MessageForm from '../../components/MessageForm'
 import Loader from '../../components/Loader'
+import ProgressLoader from '../../components/ProgressLoader'
 import Welcome from '../../layouts/Welcome'
 import Recommendation from '../../layouts/Recommendation'
-import './ReviewPage.scss'
+import './reviewPage.scss'
+import Page404 from '../Page404/page404'
 
 const ReviewPage = () => {
   const {token} = useContext(AuthContext)
@@ -38,6 +40,14 @@ const ReviewPage = () => {
 
   if (loading && !link){
     return <Loader/>
+  }else if(!loading && !link){
+
+    return (
+      <>
+        <Logo/>
+        <Page404/>
+      </>
+    )
   }else if(!loading && token && link){
     return <Loader/>
   }
@@ -69,6 +79,7 @@ const ReviewPage = () => {
                     </div>
                   </div>
                 </div>
+                <ProgressLoader />
               </div>)
           }if(index>1){
             return(
@@ -85,6 +96,7 @@ const ReviewPage = () => {
                     </div>
                   </div>
                 </div>
+                <ProgressLoader />
               </div>)
           } else {
             return ''

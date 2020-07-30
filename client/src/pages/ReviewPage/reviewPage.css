@@ -19,6 +19,34 @@ body {
   transition-delay: 0.4s !important;
 }
 
+.carousel-item:nth-child(2) .progress .progress-value {
+  animation: load_1 3s forwards;
+}
+.carousel-item:nth-child(2) .progress .progress-value img {
+  animation: loadImg_1 3s forwards;
+}
+
+.carousel-item:nth-child(3) .progress .progress-value {
+  animation: load_2 3s forwards;
+}
+.carousel-item:nth-child(3) .progress .progress-value img {
+  animation: loadImg_2 3s forwards;
+}
+
+.carousel-item:nth-child(4) .progress .progress-value {
+  animation: load_3 3s forwards;
+}
+.carousel-item:nth-child(4) .progress .progress-value img {
+  animation: loadImg_3 3s forwards;
+}
+
+.carousel-item:nth-child(5) .progress .progress-value {
+  animation: load_4 3s forwards;
+}
+.carousel-item:nth-child(5) .progress .progress-value img {
+  animation: loadImg_4 3s forwards;
+}
+
 .question {
   margin-top: 6rem;
 }
@@ -54,4 +82,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=ReviewPage.css.map */
+/*# sourceMappingURL=reviewPage.css.map */
