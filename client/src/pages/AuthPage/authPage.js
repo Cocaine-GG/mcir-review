@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import {useHttp} from '../../hooks/http.hook'
 import {AuthContext} from '../../context/AuthContext'
 import './authPage.css'
+import LogoMcir from '../../assets/images/LOGO-FOND-BLANC.svg'
 
 const AuthPage = () => {
   const auth = useContext(AuthContext)
@@ -13,7 +14,6 @@ const AuthPage = () => {
   const changeHandler = event =>{
     setForm({ ...form, [event.target.name]: event.target.value })
   }
-
   const registerHandler = async () => {
     try {
       await request('api/auth/register', 'POST', {...form})
@@ -28,11 +28,10 @@ const AuthPage = () => {
     }
   }
   return(
-    <div className="row">
-      <div className="card col-12 col-md-8 col-lg-6 mx-auto text-white bg-dark mt-5">
-        <div className="card-body">
+    <div className="authPage card col-12 col-md-5 col-lg-4 mx-auto text-white bg-light mt-5">
+      <div className="card-body">
           <div className="form-signin col-12">
-            <img className="my-4 d-block mx-auto" src="https://www.myclientisrich.com/logo@2x.daf8e3aa.png" alt="Logo MCIR"
+            <img className="my-4 d-block mx-auto" src={LogoMcir} alt="Logo MCIR"
                  width="100" height="100" />
               <div className="form-label-group">
                 <input
@@ -61,27 +60,21 @@ const AuthPage = () => {
                 />
                   <label htmlFor="password">Password</label>
               </div>
-
-              <div className="checkbox mb-3">
-                <label>
-                  <input type="checkbox" value="remember-me" /> Remember me
-                </label>
-              </div>
-              <div className="d-block d-md-flex">
+              <div className="d-block d-md-flex justify-content-lg-between">
                 <button
                   onClick={loginHandler}
-                  className="btn btn-lg btn-primary mb-2 mb-md-0 mx-auto col-12 col-md-5"
+                  className="btn btn-lg btn-success mb-2 mb-md-0 mx-auto col-12 col-md-5"
                 >Connexion</button>
                 <button
-                  className="btn btn-lg btn-light mx-auto col-12  col-md-5"
+                  className="btn btn-lg btn-info mx-auto col-12  col-md-5"
                   onClick={registerHandler}
-                  disabled={loading}
+                  // disabled={loading}
+                  disabled
                 >Inscription</button>
               </div>
           </div>
         </div>
-      </div>
-  </div>
+    </div>
   )
 }
 

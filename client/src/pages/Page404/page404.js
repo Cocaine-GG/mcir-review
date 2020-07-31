@@ -1,8 +1,8 @@
 import React from 'react'
 import './page404.scss'
 const Page404 = () => {
-  return (<div className="p404 bg-dark">
-    <a href="https://www.youtube.com/watch?v=_XiOcsj3oNI&t=50s" target="_blank" rel="noopener noreferrer">
+  return (
+    <div className="p404 bg-dark">
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-md-12 mt-5 mb-5">
@@ -632,7 +632,6 @@ const Page404 = () => {
           </div>
         </div>
       </div>
-    </a>
   </div>)
 }
 

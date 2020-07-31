@@ -7,6 +7,11 @@ import AuthPage from './pages/AuthPage'
 import ReviewPage from './pages/ReviewPage'
 
 export const useRoutes = isAuthenticated => {
+  const questionTitle = [
+    'Comment s’est déroulée notre collaboration selon vous ?',
+    'Quelle est votre satisfaction par rapport à la prestation livrée ?',
+    'Avez-vous eu des retours de vos clients par rapport à cette mission ?', 'Des conseils ou remarques à nous transmettre ?'
+  ]
   if (isAuthenticated){
     return(
       <div className="container">
@@ -18,10 +23,10 @@ export const useRoutes = isAuthenticated => {
             <CreatePage/>
           </Route>
           <Route path="/detail/:id">
-            <DetailPage/>
+            <DetailPage questionTitle={questionTitle}/>
           </Route>
           <Route path="/review">
-            <ReviewPage/>
+            <ReviewPage />
           </Route>
           <Redirect to="/create"/>
         </Switch>
@@ -34,7 +39,7 @@ export const useRoutes = isAuthenticated => {
         <AuthPage/>
       </Route>
       <Route path="/review/:id">
-        <ReviewPage/>
+        <ReviewPage questionTitle={questionTitle}/>
       </Route>
       <Redirect to="/" />
     </Switch>
