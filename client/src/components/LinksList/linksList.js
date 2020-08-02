@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 import Loader from '../Loader'
 
 const LinksList = ({ links }) => {
+  const [copied, setCopied] = useState(false)
+  const CopyLink = () => {
+    setCopied(true)
+    return copied
+  }
   if(!links.length){
     return <Loader/>
   }
@@ -26,7 +32,12 @@ const LinksList = ({ links }) => {
             <td>{link.client}</td>
             <td>{link.project}</td>
             <td><Link to={`/detail/${link.code}`} className="btn btn-outline-primary">Watch</Link></td>
-            <td><Link to={`/review/${link.code}`} className="btn btn-outline-success">Open</Link></td>
+            <td>
+              <CopyToClipboard text={`${window.location.origin}/review/${link.code}`}
+              onCopy={CopyLink}>
+                <button className="btn btn-outline-success">Copy</button>
+              </CopyToClipboard>
+            </td>
           </tr>
           )
         })}

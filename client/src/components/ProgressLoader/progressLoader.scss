@@ -1,0 +1,69 @@
+.progress {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: transparent !important;
+}
+
+.progress-value {
+  position: relative;
+  background: #CE4A4A;
+  height: 5px;
+  width: 0;
+  img {
+    margin-left: 0%;
+    bottom: 28px;
+    left: 0;
+    position: fixed;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .progress {
+    bottom: 35px;
+  }
+
+  .progress-value {
+    img {
+      width: 70px;
+      bottom: 30px;
+    }
+  }
+}
+
+//Animation -- used in ReviewPage.scss
+
+@keyframes load_1 {
+  0% { width: 0; }
+  100% { width: 25%; }
+}
+@keyframes load_2 {
+  0% { width: 25%; }
+  100% { width: 50%; }
+}
+@keyframes load_3 {
+  0% { width: 50%; }
+  100% { width: 75%; }
+}
+@keyframes load_4 {
+  0% { width: 75%; }
+  100% { width: 100%; }
+}
+@keyframes loadImg_4 {
+  0% { margin-left: 73%; }
+  100% { margin-left: 91.6%; }
+}
+@keyframes loadImg_1 {
+  0% { margin-left: 0; }
+  100% { margin-left: 23%; }
+}
+@keyframes loadImg_2 {
+  0% { margin-left: 23%; }
+  100% { margin-left: 48%; }
+}
+@keyframes loadImg_3 {
+  0% { margin-left: 48%; }
+  100% { margin-left: 73%; }
+}

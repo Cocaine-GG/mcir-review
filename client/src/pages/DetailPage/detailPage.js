@@ -5,7 +5,7 @@ import {AuthContext} from '../../context/AuthContext'
 import Loader from '../../components/Loader'
 import LinkCard from '../../components/LinkCard'
 
-const DetailPage = () => {
+const DetailPage = ({questionTitle}) => {
   const {token} = useContext(AuthContext)
   const {request, loading} = useHttp()
   const [link, setLink]= useState(null)
@@ -42,7 +42,7 @@ const DetailPage = () => {
 
   return(
     <div>
-      {!loading && link && <LinkCard link={link} answer={answer}/>}
+      {!loading && link && <LinkCard questionTitle={questionTitle} link={link} answer={answer}/>}
     </div>
   )
 }

@@ -19,6 +19,46 @@ body {
   transition: transform 0.6s ease-in-out;
   transition-delay: .4s!important;
 }
+.carousel-item:nth-child(2) {
+ .progress {
+   .progress-value {
+     animation: load_1 3s forwards;
+     img {
+       animation: loadImg_1 3s forwards;
+     }
+   }
+ }
+}
+.carousel-item:nth-child(3) {
+  .progress {
+    .progress-value {
+      animation: load_2 3s forwards;
+      img {
+        animation: loadImg_2 3s forwards;
+      }
+    }
+  }
+}
+.carousel-item:nth-child(4) {
+  .progress {
+    .progress-value {
+      animation: load_3 3s forwards;
+      img {
+        animation: loadImg_3 3s forwards;
+      }
+    }
+  }
+}
+.carousel-item:nth-child(5) {
+  .progress {
+    .progress-value {
+      animation: load_4 3s forwards;
+      img {
+        animation: loadImg_4 3s forwards;
+      }
+    }
+  }
+}
 
 .question {
   margin-top: 6rem;

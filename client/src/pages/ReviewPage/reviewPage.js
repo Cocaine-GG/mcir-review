@@ -6,20 +6,18 @@ import Logo from '../../components/Logo'
 import StarsRating from '../../components/StarsRating'
 import MessageForm from '../../components/MessageForm'
 import Loader from '../../components/Loader'
+import ProgressLoader from '../../components/ProgressLoader'
 import Welcome from '../../layouts/Welcome'
 import Recommendation from '../../layouts/Recommendation'
-import './ReviewPage.scss'
+import Page404 from '../Page404/page404'
+import './reviewPage.scss'
 
-const ReviewPage = () => {
+const ReviewPage = ({questionTitle}) => {
   const {token} = useContext(AuthContext)
   const {request, loading} = useHttp()
   const [link, setLink]= useState(null)
   const linkCode = useParams().id
-  const questionTitle = [
-    'Comment s’est déroulée notre collaboration selon vous ?',
-    'Quelle est votre satisfaction par rapport à la prestation livrée ?',
-    'Avez-vous eu des retours de vos clients par rapport à cette mission ?', 'Des conseils ou remarques à nous transmettre ?'
-  ]
+
   const answer = [linkCode]
   //TODO: Optimize callback
   const getLink = useCallback(async ()=>{
@@ -38,6 +36,14 @@ const ReviewPage = () => {
 
   if (loading && !link){
     return <Loader/>
+  }else if(!loading && !link){
+
+    return (
+      <>
+        <Logo/>
+        <Page404/>
+      </>
+    )
   }else if(!loading && token && link){
     return <Loader/>
   }
@@ -69,6 +75,7 @@ const ReviewPage = () => {
                     </div>
                   </div>
                 </div>
+                <ProgressLoader />
               </div>)
           }if(index>1){
             return(
@@ -85,6 +92,7 @@ const ReviewPage = () => {
                     </div>
                   </div>
                 </div>
+                <ProgressLoader />
               </div>)
           } else {
             return ''
