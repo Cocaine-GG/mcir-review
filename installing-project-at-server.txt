@@ -1,0 +1,41 @@
+1. Доменное имя
+2. Сервер
+3. SSH-подключение
+4. Настройки сервервера
+    1
+      Обновить сервер
+        sudo apt update
+    2
+      Установить Git
+        sudo apt install git
+    3
+      Клонируем репозиторий
+    4
+        Устанавливаем NodeJs --> https://computingforgeeks.com/how-to-install-nodejs-on-ubuntu-debian-linux-mint/
+          sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+          sudo apt -y install nodejs
+5. Скачиваем node_modules
+   cd react-mcir
+   npm install
+   npm run client:install
+   npm run client:build
+6. Настроить config
+    cd config
+    nano production.json
+        {
+          "port": 80,
+          "jwtSecret": "mcir-secret-key",
+          "mongoUri": "mongodb+srv://mcir-db:myclientisrich67@cluster0.fnvop.mongodb.net/mcir-db?retryWrites=true&w=majority",
+          "baseUrl": "DOMEN Name"
+        }
+    ctrl+O -> Enter -> ctrl-X
+7. Добавить IP-adress сервера в MongoDB
+8. Запуск приложения
+   npm run start
+   остановить процесс
+9. Установить PM2
+    sudo npm install -g pm2
+    cd react-mcir
+    pm2 start npm -- start
+        pm2 stop :id --- для остановки
