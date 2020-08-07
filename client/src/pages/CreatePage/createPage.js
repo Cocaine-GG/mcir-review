@@ -23,7 +23,7 @@ const CreatePage = () => {
       })
       history.push(`/detail/${data.link.code}`)
     }catch (e) {
-
+      auth.logout()
     }
   }
 

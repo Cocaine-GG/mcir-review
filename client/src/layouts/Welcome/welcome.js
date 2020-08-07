@@ -1,6 +1,6 @@
 import React from 'react'
 import './welcome.scss'
-
+// import imgRambo from '../../assets/images/Rambo-PNG-Photo.png'
 const Welcome = ({link}) => {
   return (
       <div className="container welcome">
@@ -14,6 +14,7 @@ const Welcome = ({link}) => {
           </button>
           <div className="button__line d-block"></div>
         </div>
+        {/*<img src={imgRambo} alt="Image Rambo"/>*/}
       </div>
   )
 }

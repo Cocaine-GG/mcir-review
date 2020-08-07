@@ -69,8 +69,8 @@ const ReviewPage = ({questionTitle}) => {
                   </div>
 
                   <div className="d-md-flex justify-content-between">
-                    <h1 className="question__title  py-0 col-md-6">{el}</h1>
-                    <div className="starsWrap align-self-lg-center col-12 col-md-5">
+                    <h1 className="question__title  px-0 col-md-6">{el}</h1>
+                    <div className="starsWrap col-12 col-md-5">
                       <StarsRating answArr={answer}/>
                     </div>
                   </div>
@@ -87,7 +87,7 @@ const ReviewPage = ({questionTitle}) => {
 
                   <div className="d-md-flex justify-content-between">
                     <h1 className="question__title col-md-6">{el}</h1>
-                    <div className="starsWrap align-self-center align-self-lg-center col-12 col-md-5">
+                    <div className="messageWrap col-12 col-md-5">
                       <MessageForm answArr={answer}/>
                     </div>
                   </div>

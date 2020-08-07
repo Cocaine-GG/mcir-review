@@ -2,7 +2,13 @@
   font-family: 'GothamRegular';
   src: local('GothamRegular'), url('../../assets/fonts/GothamRegular.otf') format('opentype');
 }
+@font-face {
+  font-family: 'GothamLight';
+  src: local('GothamLight'), url('../../assets/fonts/GothamLight.otf') format('opentype');
+}
 .recommendation {
+  color: black;
+  padding: 0px!important;
   &__context {
     text-align: center;
   }
@@ -12,16 +18,27 @@
     }
     &__subtitle {
       font-family: 'GothamRegular';
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      padding: 20px 1rem;
+      margin: auto;
     }
   }
   &__footer {
+    background: #DDD;
+    bottom: 0;
     font-family: 'GothamRegular';
     font-size: 2.2rem;
-    height: 40vh;
-    background: #DDD;
+    width: 100%;
+    position: absolute;
+    height: 42vh;
   }
   .footer {
+    &__wrap {
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+    }
     &__img {
       position: fixed;
       bottom: -230px;
@@ -29,21 +46,58 @@
     }
     &__btn {
       font-family: 'gotham';
+      color: black;
       text-transform: none;
       font-size: 2.5rem;
       background: #fff;
-      padding: 10px 50px;
       border-radius: 0;
       -webkit-box-shadow: -2px 11px 25px -9px rgba(0,0,0,0.75);
       -moz-box-shadow: -2px 11px 25px -9px rgba(0,0,0,0.75);
       box-shadow: -2px 11px 25px -9px rgba(0,0,0,0.75);
+      &:focus {
+        background: #CE4A4A;
+        color: #fff;
+      }
+    }
+    &__textarea {
+      display: flex;
+      max-height: 82px;
+      position: relative;
+      label {
+        font-size: 10px;
+        color: gray;
+      }
+      textarea {
+        font-family: 'GothamLight';
+        position: relative;
+        width: 100%;
+        font-size: 12px;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        height: 50px;
+        resize: none;
+        align-self: flex-end;
+        padding: 10px 50px 10px 20px;
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+    &__submit {
+      background: #BEBEBE;
+      color: #ffffff;
+      position: absolute;
+      right: 5px;
+      bottom: 20px;
     }
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 521.98px) {
   .recommendation {
     .context {
+      margin-top: 1.5rem;
       &__title {
         font-size: 2rem;
       }
@@ -52,18 +106,44 @@
       }
     }
     .footer {
+      &__wrap {
+        justify-content: center;
+      }
       &__title {
         font-size: 1rem;
+        margin: 0.5rem 0;
+      }
+      &__btn {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+@media (min-width: 522px) and (max-width: 767.98px) {
+  .recommendation {
+    .context {
+      margin-top: 1.5rem;
+      &__title {
+        font-size: 3.5rem;
+      }
+      &__subtitle {
+        font-size: 1.75rem;
+      }
+    }
+    .footer {
+      &__wrap {
+        justify-content: center;
+      }
+      &__title {
+        font-size: 1.75rem;
+        margin: 0.5rem 0;
       }
       &__img {
         position: fixed;
         bottom: -350px;
       }
       &__btn {
-        font-family: 'gotham';
         font-size: 1.5rem;
-        background: #fff;
-        padding: 10px 50px;
       }
     }
   }
@@ -73,12 +153,51 @@
   .recommendation {
     .context {
       &__title {
-        font-size: 3.25rem;
+        font-size: 4rem;
       }
 
       &__subtitle {
         font-size: 2rem;
       }
     }
+    .footer {
+      &__title {
+        font-size: 2rem;
+      }
+      &__btn {
+        font-size: 2rem;
+      }
+    }
   }
+}
+@media (min-width: 992px) and (max-width: 1439.98px){
+  .recommendation {
+    .context {
+      &__title {
+        font-size: 3.5rem;
+      }
+
+      &__subtitle {
+        font-size: 2.1rem;
+      }
+    }
+    .footer {
+      &__title {
+        font-size: 1.5rem;
+      }
+      &__btn {
+        font-family: 'gotham';
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+@media (min-width: 1400px) {
+    .recommendation {
+      .footer {
+        &__wrap {
+          margin-right: 10%!important;
+        }
+      }
+    }
 }

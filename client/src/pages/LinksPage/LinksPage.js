@@ -8,6 +8,7 @@ const LinksPage = () => {
   const [links, setLinks] = useState([])
   const {loading, request} = useHttp()
   const {token} = useContext(AuthContext)
+  const auth = useContext(AuthContext)
 
   const fetchLinks = useCallback(async ()=>{
     try {
@@ -15,8 +16,10 @@ const LinksPage = () => {
         Authorization: `Bearer ${token}`
       })
       setLinks(fetched)
-    } catch (e) {}
-  },[token, request])
+    } catch (e) {
+      auth.logout()
+    }
+  },[token, request,auth])
   useEffect( ()=>{
     fetchLinks()
   }, [fetchLinks])

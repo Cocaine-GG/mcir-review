@@ -28,7 +28,7 @@ const AuthPage = () => {
     }
   }
   return(
-    <div className="authPage card col-12 col-md-5 col-lg-4 mx-auto text-white bg-light mt-5">
+    <div className="authPage card col-12 col-md-8 col-lg-6 col-xl-3 mx-auto text-white bg-light mt-5">
       <div className="card-body">
           <div className="form-signin col-12">
             <img className="my-4 d-block mx-auto" src={LogoMcir} alt="Logo MCIR"

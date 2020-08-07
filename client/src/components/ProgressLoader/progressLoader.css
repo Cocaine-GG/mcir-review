@@ -1,33 +1,28 @@
-.progress {
-  position: fixed;
-  bottom: 50px;
-  left: 0;
-  height: 5px;
+.progress-loader {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
   width: 100%;
-  background-color: transparent !important;
+  background-color: transparent;
 }
-
-.progress-value {
-  position: relative;
+.progress-loader .progress-value {
   background: #CE4A4A;
+  align-self: center;
   height: 5px;
   width: 0;
 }
-.progress-value img {
-  margin-left: 0%;
-  bottom: 28px;
-  left: 0;
-  position: fixed;
+.progress-loader__img {
+  margin-left: -2%;
 }
 
 @media (max-width: 767.98px) {
-  .progress {
-    bottom: 35px;
+  .progress-loader__img {
+    height: 30px;
   }
-
-  .progress-value img {
-    width: 70px;
-    bottom: 30px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .progress-loader__img {
+    height: 60px;
   }
 }
 @keyframes load_1 {
@@ -35,63 +30,31 @@
     width: 0;
   }
   100% {
-    width: 25%;
+    width: 20%;
   }
 }
 @keyframes load_2 {
   0% {
-    width: 25%;
+    width: 20%;
   }
   100% {
-    width: 50%;
+    width: 45%;
   }
 }
 @keyframes load_3 {
   0% {
-    width: 50%;
+    width: 45%;
   }
   100% {
-    width: 75%;
+    width: 60%;
   }
 }
 @keyframes load_4 {
   0% {
-    width: 75%;
+    width: 60%;
   }
   100% {
     width: 100%;
-  }
-}
-@keyframes loadImg_4 {
-  0% {
-    margin-left: 73%;
-  }
-  100% {
-    margin-left: 91.6%;
-  }
-}
-@keyframes loadImg_1 {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: 23%;
-  }
-}
-@keyframes loadImg_2 {
-  0% {
-    margin-left: 23%;
-  }
-  100% {
-    margin-left: 48%;
-  }
-}
-@keyframes loadImg_3 {
-  0% {
-    margin-left: 48%;
-  }
-  100% {
-    margin-left: 73%;
   }
 }
 

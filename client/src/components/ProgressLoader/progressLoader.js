@@ -4,8 +4,9 @@ import Rocket from '../../assets/images/Rocket.png'
 
 const ProgressLoader = () => {
   return (
-    <div className="progress">
-      <div className={"progress-value"}><img src={Rocket} alt="Rocket"/></div>
+    <div className="progress-loader">
+      <div className="progress-value"></div>
+      <img className="progress-loader__img" src={Rocket} alt="Rocket"/>
     </div>
   )
 }

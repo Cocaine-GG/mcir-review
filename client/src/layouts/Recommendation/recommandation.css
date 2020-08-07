@@ -2,6 +2,14 @@
   font-family: "GothamRegular";
   src: local("GothamRegular"), url("../../assets/fonts/GothamRegular.otf") format("opentype");
 }
+@font-face {
+  font-family: "GothamLight";
+  src: local("GothamLight"), url("../../assets/fonts/GothamLight.otf") format("opentype");
+}
+.recommendation {
+  color: black;
+  padding: 0px !important;
+}
 .recommendation__context {
   text-align: center;
 }
@@ -10,13 +18,24 @@
 }
 .recommendation .context__subtitle {
   font-family: "GothamRegular";
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  padding: 20px 1rem;
+  margin: auto;
 }
 .recommendation__footer {
+  background: #DDD;
+  bottom: 0;
   font-family: "GothamRegular";
   font-size: 2.2rem;
-  height: 40vh;
-  background: #DDD;
+  width: 100%;
+  position: absolute;
+  height: 42vh;
+}
+.recommendation .footer__wrap {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 }
 .recommendation .footer__img {
   position: fixed;
@@ -25,43 +44,130 @@
 }
 .recommendation .footer__btn {
   font-family: "gotham";
+  color: black;
   text-transform: none;
   font-size: 2.5rem;
   background: #fff;
-  padding: 10px 50px;
   border-radius: 0;
   -webkit-box-shadow: -2px 11px 25px -9px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 11px 25px -9px rgba(0, 0, 0, 0.75);
   box-shadow: -2px 11px 25px -9px rgba(0, 0, 0, 0.75);
 }
+.recommendation .footer__btn:focus {
+  background: #CE4A4A;
+  color: #fff;
+}
+.recommendation .footer__textarea {
+  display: flex;
+  max-height: 82px;
+  position: relative;
+}
+.recommendation .footer__textarea label {
+  font-size: 10px;
+  color: gray;
+}
+.recommendation .footer__textarea textarea {
+  font-family: "GothamLight";
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  height: 50px;
+  resize: none;
+  align-self: flex-end;
+  padding: 10px 50px 10px 20px;
+}
+.recommendation .footer__textarea textarea::placeholder {
+  font-size: 14px;
+}
+.recommendation .footer__submit {
+  background: #BEBEBE;
+  color: #ffffff;
+  position: absolute;
+  right: 5px;
+  bottom: 20px;
+}
 
-@media (max-width: 767.98px) {
+@media (max-width: 521.98px) {
+  .recommendation .context {
+    margin-top: 1.5rem;
+  }
   .recommendation .context__title {
     font-size: 2rem;
   }
   .recommendation .context__subtitle {
     font-size: 1rem;
   }
+  .recommendation .footer__wrap {
+    justify-content: center;
+  }
   .recommendation .footer__title {
     font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  .recommendation .footer__btn {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 522px) and (max-width: 767.98px) {
+  .recommendation .context {
+    margin-top: 1.5rem;
+  }
+  .recommendation .context__title {
+    font-size: 3.5rem;
+  }
+  .recommendation .context__subtitle {
+    font-size: 1.75rem;
+  }
+  .recommendation .footer__wrap {
+    justify-content: center;
+  }
+  .recommendation .footer__title {
+    font-size: 1.75rem;
+    margin: 0.5rem 0;
   }
   .recommendation .footer__img {
     position: fixed;
     bottom: -350px;
   }
   .recommendation .footer__btn {
-    font-family: "gotham";
     font-size: 1.5rem;
-    background: #fff;
-    padding: 10px 50px;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .recommendation .context__title {
-    font-size: 3.25rem;
+    font-size: 4rem;
   }
   .recommendation .context__subtitle {
     font-size: 2rem;
+  }
+  .recommendation .footer__title {
+    font-size: 2rem;
+  }
+  .recommendation .footer__btn {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .recommendation .context__title {
+    font-size: 3.5rem;
+  }
+  .recommendation .context__subtitle {
+    font-size: 2.1rem;
+  }
+  .recommendation .footer__title {
+    font-size: 1.5rem;
+  }
+  .recommendation .footer__btn {
+    font-family: "gotham";
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1400px) {
+  .recommendation .footer__wrap {
+    margin-right: 10% !important;
   }
 }
 

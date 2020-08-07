@@ -7,6 +7,7 @@ import LinkCard from '../../components/LinkCard'
 
 const DetailPage = ({questionTitle}) => {
   const {token} = useContext(AuthContext)
+  const auth = useContext(AuthContext)
   const {request, loading} = useHttp()
   const [link, setLink]= useState(null)
   const [answer, setAnswer]= useState(null)
@@ -18,8 +19,10 @@ const DetailPage = ({questionTitle}) => {
         Authorization: `Bearer ${token}`
       })
       setLink(fetched)
-    } catch (e) {}
-  }, [token, linkId, request])
+    } catch (e) {
+      auth.logout()
+    }
+  }, [token, linkId, request,auth])
 
   const getAnswer = useCallback(async ()=>{
     try {

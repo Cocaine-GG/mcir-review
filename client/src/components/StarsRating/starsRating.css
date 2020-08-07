@@ -30,7 +30,7 @@ input[type=radio] {
 
   .star,
 .star--active {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .question__stars-text {
