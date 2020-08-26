@@ -6,6 +6,7 @@ const schema = new Schema({
   question_2: String,
   question_3: String,
   question_4: String,
+  refuseAvis: String,
   linkId: {type: Types.ObjectId, ref: 'Link'}
 
 })

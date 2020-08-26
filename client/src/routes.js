@@ -25,9 +25,6 @@ export const useRoutes = isAuthenticated => {
           <Route path="/detail/:id">
             <DetailPage questionTitle={questionTitle}/>
           </Route>
-          <Route path="/review">
-            <ReviewPage />
-          </Route>
           <Redirect to="/create"/>
         </Switch>
       </div>

@@ -11,13 +11,17 @@ router.post('/answer',async (req,res)=>{
     const question_2 = req.body[2]
     const question_3 = req.body[3]
     const question_4 = req.body[4]
+    let refuseAvis = null
+    if (req.body[5]){
+      refuseAvis = req.body[5]
+    }
 
     const existing = await Answer.findOne({code})
     if (existing) {
       return res.json({ answer: existing }) //Change message -> Answer deja exist
     }
 
-    const answer = new Answer({code, question_1,question_2,question_3,question_4})
+    const answer = new Answer({code, question_1,question_2,question_3,question_4,refuseAvis})
 
       await answer.save()
       res.status(201).json({answer})

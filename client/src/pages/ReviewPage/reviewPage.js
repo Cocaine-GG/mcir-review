@@ -100,7 +100,7 @@ const ReviewPage = ({questionTitle}) => {
         })}
         <div className="carousel-item">
           <Logo />
-          {!loading && link && <Recommendation/>}
+          {!loading && link && <Recommendation answArr={answer}/>}
         </div>
       </div>
     </div>

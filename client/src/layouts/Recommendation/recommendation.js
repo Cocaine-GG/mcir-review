@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
+import {useHttp} from '../../hooks/http.hook'
 import {FaCheck, FaTimes, FaArrowRight} from 'react-icons/all'
-
 import './recommandation.scss'
 import imgGuy from '../../assets/images/guy.png'
 
-const Recommendation = () => {
+
+const Recommendation = ({answArr}) => {
   const [displayArea, setDisplayArea] = useState('none')
   const [valueArea, setValueArea] = useState('')
+
+  const {request}= useHttp()
 
   const toogleTextarea = () => {
     if(displayArea === 'none'){
@@ -15,9 +18,25 @@ const Recommendation = () => {
       setDisplayArea('none')
     }
   }
+
   const valueAreaHandler = (e) => {
     setValueArea(e.target.value)
   }
+
+  const answerHandler =()=>{
+    answArr.push(valueArea)
+    // SUBMIT DATAS
+    if (answArr.length === 5 || answArr.length === 6) {
+      const submitHandler = async ()=>{
+        try {
+          await request('/api/review/answer', 'POST', {...answArr})
+        } catch (e) {
+        }
+      }
+      submitHandler()
+    }
+  }
+
   return (
       <div className="container-fluid recommendation">
         <div className="recommendation__context">
@@ -32,14 +51,15 @@ const Recommendation = () => {
                 <a
                   href="https://g.page/myclientisrich/review?gm"
                   target="_blank" rel="noopener noreferrer"
+                  onClick={answerHandler}
                   className="footer__btn align-self-center btn col-8 col-sm-6 col-lg-3 mx-sm-1 mr-lg-3 mb-2 mb-lg-0">
-                  Oui <FaCheck style={{color:'#65C498'}}/>
+                  Oui <FaCheck style={{color:'#65C498',fontSize:'1.3rem'}}/>
                 </a>
                 <button
                   className="footer__btn align-self-center btn col-8 col-sm-6 col-lg-3 mx-sm-1 mr-lg-3 mb-2 mb-lg-0"
                   onClick={toogleTextarea}
                 >
-                  Non <FaTimes style={{color:'#D32D2D'}}/>
+                  Non <FaTimes style={{color:'#D32D2D',fontSize:'1.3rem'}}/>
                 </button>
                 <div style={{display:displayArea}} className="footer__textarea col-12 col-md-12 col-lg-5">
                   <label className="d-block my-0">Expliquez-nous la raison, ça nous aidera !</label>
@@ -48,8 +68,8 @@ const Recommendation = () => {
                     placeholder="Écrire ici …"
                     onChange={valueAreaHandler}></textarea>
                     <FaArrowRight
-                      className="footer__submit rounded-circle p-1"
-                      onClick={()=>alert(valueArea)}/>
+                      className="footer__submit btn rounded-circle p-1"
+                      onClick={answerHandler}/>
                   </div>
                 </div>
               </div>

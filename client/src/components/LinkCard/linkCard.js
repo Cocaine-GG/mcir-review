@@ -32,6 +32,9 @@ import {NavLink} from 'react-router-dom'
             <h4>{questionTitle[3]}</h4>
             <p>{el.question_4}</p>
             <hr/>
+            <h4>Expliquez-nous la raison, ça nous aidera!</h4>
+            <p>{el.refuseAvis?el.refuseAvis:'Le client a choisi l\'option "Oui"'}</p>
+            <hr/>
           </div>
           )
         })}
