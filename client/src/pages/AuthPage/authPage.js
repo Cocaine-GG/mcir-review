@@ -6,7 +6,8 @@ import LogoMcir from '../../assets/images/LOGO-FOND-BLANC.svg'
 
 const AuthPage = () => {
   const auth = useContext(AuthContext)
-  const {loading,request}= useHttp()
+  const {request}= useHttp()
+  // const {loading,request}= useHttp()
   const [form, setForm] = useState({
     email: '', password: ''
   })
